@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# MovieLens data is downloaded automatically by 实验代码.py
+数据集/ml-100k/
+数据集/ml-100k.zip
