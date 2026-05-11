@@ -1,0 +1,87 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>春联上联对下联</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .input-box {
+            width: 90%; /* 调整文本框宽度 */
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+
+        .output-box {
+            width: 90%; /* 调整文本框宽度 */
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>春联上联对下联(只能输入中文，特殊字符会忽略)</h1>
+    <div class="container">
+        <div class="input-container">
+            <textarea class="input-box" id="inputText" placeholder="请输入上联..." rows="5"></textarea>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="executeFunction('analyze')">获取下联</button>
+            <button class="button" onclick="executeFunction('clean')">清空文本框</button>
+        </div>
+        <div class="output-container">
+            <textarea class="output-box" readonly="readonly" id="outputText" rows="5"></textarea>
+        </div>
+    </div>
+    <script>
+        function executeFunction(functionName) {
+            var inputElement = document.getElementById("inputText");
+            var resultElement = document.getElementById("outputText");
+            var function_name = "";
+            if (functionName == 'analyze') function_name = "对春联";
+            else function_name = "清空对话框"
+
+            fetch("/execute_function", {
+                method: "POST",
+                body: JSON.stringify({ function_name: functionName, input_text: inputElement.value }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (functionName == 'analyze') {
+                    resultElement.value = data;
+                }
+                else{
+                    inputElement.value = "";
+                    resultElement.value = "";
+                }
+
+            });
+        }
+    </script>
+</body>
+</html>

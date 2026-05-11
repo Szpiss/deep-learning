@@ -1,0 +1,43 @@
+Using device: mps
+Epoch 1/10
+Train Loss: 7.671861
+Valid Loss: 7.612582
+Test Loss : 7.068481
+Epoch 2/10
+Train Loss: 7.011299
+Valid Loss: 6.966471
+Test Loss : 6.884653
+Epoch 3/10
+Train Loss: 6.811176
+Valid Loss: 6.752265
+Test Loss : 6.778659
+Epoch 4/10
+Train Loss: 6.690640
+Valid Loss: 6.686918
+Test Loss : 6.706974
+Epoch 5/10
+Train Loss: 6.645029
+Valid Loss: 6.623534
+Test Loss : 6.706774
+Epoch 6/10
+Train Loss: 6.607600
+Valid Loss: 6.585604
+Test Loss : 6.658998
+Epoch 7/10
+Train Loss: 6.563904
+Valid Loss: 6.553636
+Test Loss : 6.645989
+Epoch 8/10
+Train Loss: 6.526198
+Valid Loss: 6.507291
+Test Loss : 6.611602
+Epoch 9/10
+Train Loss: 6.490754
+Valid Loss: 6.447511
+Test Loss : 6.534979
+Epoch 10/10
+Train Loss: 6.446218
+Valid Loss: 6.419461
+Test Loss : 6.563898
+Best validation loss: 6.419461
+Checkpoint saved to: /Users/cuing/Desktop/实验04代码_a9e285a6ce7b8899255f/ChineseCouplet/save/best_model.pt
